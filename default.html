@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KONG</title>
+<link rel="stylesheet" rev="stylesheet" href="css/ikooong0411.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/html5shiv.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+function browserRedirect() {
+	var sUserAgent= navigator.userAgent.toLowerCase();
+	var bIsIpad= sUserAgent.match(/ipad/i) == "ipad";
+	var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os";
+	var bIsMidp= sUserAgent.match(/midp/i) == "midp";
+	var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+	var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb";
+	var bIsAndroid= sUserAgent.match(/android/i) == "android";
+	var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce";
+	var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile";
+	if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+		window.location.href= 'http://www.ikooong.com/m_index.html';
+	}
+}
+browserRedirect();
+//0323
+</script>
+
+
+<div class="main">
+	<div class="lbox">
+	<header>
+		<h1><a href="http://www.ikooong.com"><img src="images/logo.gif" alt="" /></a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="javascript:;">VISUAL DESIGN</a></li>
+			<li><a href="javascript:;">WORK SHOP</a></li>
+			<li><a href="javascript:;">FASHION DESIGN</a></li>
+			<li><a href="javascript:;">PAINTER</a></li>
+			<li><a href="javascript:;">ABOUT ME</a></li>
+		</ul>
+	</nav>
+	<footer>
+		<h3>工作联络</h3>
+		<ul>
+			<li><a href="mailto:KOOONG@YEAH.NET">KOOONG@YEAH.NET</a></li>
+			<li>web created by CrossJae.</li>
+		</ul>
+	</footer>
+	</div>
+	<div class="rbox">
+		<div class="imgbox">
+			<div class="imgunit"><img src="images/780x406.gif" alt="" data-width="780" data-height="406" /></div>
+			<div class="imgunit"><img src="images/index08.jpg" alt="" data-width="780" data-height="1184" /></div>
+			<div class="imgunit"><img src="images/index03.jpg" alt="" data-width="780" data-height="518" /></div>
+			<div class="imgunit">
+				<video data-width="780" data-height="452" controls="controls" autoplay="autoplay" loop="loop">
+				  <source src="images/visu/visu02.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="imgunit">
+				<video data-width="780" data-height="406" controls="controls" autoplay="autoplay" loop="loop">
+				  <source src="images/painter/painter01.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="imgunit">
+				<video data-width="780" data-height="512" controls="controls" autoplay="autoplay" loop="loop">
+				  <source src="images/visu/visu03.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</div>
+		<div class="imgbg"></div>
+		<!-- about me -->
+		<div class="intro-box" style="display:none">
+			<img class="intro-img" src="images/intro.jpg" alt="" />
+			<div class="intro-detail">
+			<div class="intro-name">KONG</div>
+			<div class="intro-txt">曾就职于微软（中国）、凤凰传媒、《时尚芭莎》等一线公司，现任腾讯设计中心视觉设计师。拥有多年互联网工作经验，对纸媒和新媒体有着浓厚兴趣。善于从艺术作品、时尚元素中寻求创作灵感。热衷于手绘插画创作。在时尚类摄影工作中担任创意指导。</div>
+			</div>
+		</div>
+	</div>
+	<div class="arrowbox">
+		<a class="btn-next btn" href="javascript:;">
+			<div class="circle"></div>
+			<div class="circle-big"></div>
+			<span class="arrow"></span>
+			<span class="arrow-big"></span>
+		</a>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+// 幻灯片切换
+$('.btn-next').hover(function(){
+	$(this).find('.arrow').css({
+		'transition':'all 0.3s ease'
+	}).addClass('arrow-h');
+	$(this).find('.arrow-big').css({
+		'transition':'all 0.3s ease'
+	}).addClass('arrow-big-h');
+	// 图片变化
+	$(".imgbox").find(".on").find("img").css(css_small)
+	// $(".imgbox").find(".on").find("img").addClass("besmall")
+},function(){
+	$(this).find('.arrow').css({
+		'transition':'none'
+	}).removeClass('arrow-h');
+	$(this).find('.arrow-big').css({
+		'transition':'none'
+	}).removeClass('arrow-big-h');
+	// 图片变化
+	$(".imgbox").find(".on").find("img").css(css_big)
+	// $(".imgbox").find(".on").find("img").removeClass("besmall")
+})
+
+var img_unit=$('.imgbox').find('.imgunit');
+//初始化
+img_unit.eq(0).addClass("on").show();
+var initial_height=406;
+$(".imgbox").height(initial_height);
+
+//参数设置
+imgInitial();
+function imgInitial(){
+var img_width=null,
+	img_height=null,
+	imgunit_width=780,//设置参数，实际图片显示的尺寸=图片外DIV的高度
+	imgunit_height=null,
+	img_radio=null
+
+$('.imgunit').each(function(index){//设置每个图片、以及图片外DIV的尺寸位置
+	img_width=$(this).find("img").attr("data-width")||$(this).find("video").attr("data-width");//图片宽度
+	img_height=$(this).find("img").attr("data-height")||$(this).find("video").attr("data-height");//图片高度
+	img_radio=img_width/img_height;
+	imgunit_height=Math.floor(imgunit_width/img_radio);
+	$(this).css({
+		height:imgunit_height
+	});
+	$(this).children().css({
+		marginTop:-imgunit_height/2
+	});
+})
+}
+//设置两个CSS，放大图片跟缩小图片的效果
+var css_big={
+	// "transform":"translate3d(0px, 0px, 0px) scale(1.02, 1.02)",
+	// "opacity":1,
+	"transition":"all 0.3s ease-in"
+}
+
+var css_small={
+	// "transform":"translate3d(0px, 0px, 0px) scale(1, 1)",
+	// "opacity":0.8,
+	"transition":"all 0.8s ease-in"
+}
+
+$(".btn-next").on("click",function(){
+	var img_now=$(".imgbox").find(".on").index();//获取当前图片索引
+	img_unit=$('.imgbox').find('.imgunit');
+	$('.imgunit').eq(img_now).removeClass("on").fadeOut(500)
+	if(img_now==img_unit.length-1){
+		img_unit.eq(0).addClass("on").fadeIn(1000);
+		img_unit.eq(img_now).find("img").css(css_big);
+		img_unit.eq(0).find("img").css(css_small);
+		var imgbox_height=$(".imgunit").eq(0).height();
+		$(".imgbox").animate({
+			height:imgbox_height
+		},500)
+	}else{
+		img_unit.eq(img_now+1).addClass("on").fadeIn(1000);
+		img_unit.eq(img_now).find("img").css(css_big);
+		img_unit.eq(img_now+1).find("img").css(css_small);
+		var imgbox_height=$(".imgunit").eq(img_now+1).height();
+		$(".imgbox").animate({
+			height:imgbox_height
+		},500)
+
+	};
+})
+
+
+// 点击切换菜单
+$("nav").find("li").on("click",function(){
+	var li_index=$(this).index();
+	$(this).addClass("cur").siblings().removeClass("cur");
+	if(li_index<$("nav li").length-1){
+		$('.intro-box').hide();
+		$(".imgbox").show().empty();
+		$('.imgbg').show();
+		$('.arrowbox').show();
+		addImglist(li_index+1);
+	}else{
+		$(".imgbox").empty().hide();
+		$('.imgbg').hide();
+		$('.arrowbox').hide();
+		$('.intro-box').show();
+	}
+
+})
+//xml
+function addImglist(i){
+var request = $.ajax({
+    url: "images/img0"+i+".xml",
+    dataType: 'xml',
+    type: 'GET',
+    timeout: 2000,
+    error: function(xml)
+    {
+        //alert("加载XML 文件出错！");
+    },
+    success: function(xml)
+    {
+        $(xml).find("imglist").each(function(i)
+        {
+        	var isImg = $(this).children("isimg").text();//判断视频还是图片
+            var img_src = $(this).children("imgsrc").text();
+            var data_width = $(this).children("datawidth").text();
+            var data_height = $(this).children("dataheight").text();
+            if(isImg==1){
+            	var html_imglist="<div class='imgunit'><img src='images/"+img_src+"' alt='' data-width='"+data_width+"' data-height='"+data_height+"' /></div>";
+            }else{
+            	var html_imglist="<div class='imgunit'><video controls='controls' autoplay='autoplay' loop='loop' type='video/mp4' src='images/"+img_src+"' alt='' data-width='"+data_width+"' data-height='"+data_height+"' /></video></div>";
+            }
+			$(".imgbox").append(html_imglist);
+			imgInitial()
+        });
+    }
+});
+request.done(function() {
+  $('.imgbox').find('.imgunit').eq(0).addClass("on").show();
+  $(".imgbox").height(406);
+});
+}
+})
+
+</script>
+</body>
+</html>

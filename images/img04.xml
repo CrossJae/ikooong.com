@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<imgbox>
+  <imglist>
+    <isimg>1</isimg>
+    <imgsrc>painter/painter05.jpg</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>1760</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>0</isimg>
+    <imgsrc>painter/painter01.mp4</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>406</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>0</isimg>
+    <imgsrc>painter/painter02.mp4</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>406</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>0</isimg>
+    <imgsrc>painter/painter03.mp4</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>434</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>0</isimg>
+    <imgsrc>painter/painter04.mp4</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>672</dataheight>
+  </imglist>
+</imgbox>
+  

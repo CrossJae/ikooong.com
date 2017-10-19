@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<imgbox>
+  <imglist>
+  	<isimg>1</isimg>
+    <imgsrc>workshop/work01.jpg</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>2220</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>1</isimg>
+    <imgsrc>workshop/work04.jpg</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>2488</dataheight>
+  </imglist>
+  <imglist>
+  	<isimg>1</isimg>
+    <imgsrc>workshop/work06.gif</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>994</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>0</isimg>
+    <imgsrc>workshop/work05.mp4</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>938</dataheight>
+  </imglist>
+  <imglist>
+  	<isimg>0</isimg>
+    <imgsrc>workshop/work07.mp4</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>384</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>1</isimg>
+    <imgsrc>visu/visu06.gif</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>1019</dataheight>
+  </imglist>
+  <imglist>
+  	<isimg>0</isimg>
+    <imgsrc>workshop/work08.mp4</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>420</dataheight>
+  </imglist>
+  <imglist>
+    <isimg>1</isimg>
+    <imgsrc>workshop/work03.jpg</imgsrc>
+    <datawidth>780</datawidth>
+    <dataheight>1023</dataheight>
+  </imglist>
+</imgbox>
+  
